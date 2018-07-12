@@ -14,7 +14,10 @@ while(1):
             img = cv2.hconcat([img],[img2])
         elif i >5:
             img2 = cv2.imread('cap'+str(i)+'.png')
-            img = cv2.hconcat([img],[img2])
+            img = cv2.vconcat([img],[img2])
+            for j range(1,i/5-j):
+                img2 = cv2.imread('back.png')
+                img = cv2.hconcat([img],[img2])
     cv2.namedWindow('test',cv2.WINDOW_NORMAL)
     cv2.imshow('test',img)
     cv2.waitkey(1)
